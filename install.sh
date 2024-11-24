@@ -1,5 +1,7 @@
 #!/bin/bash
-if [ -w pwd ]; then
+diretorio_atual=$(pwd)
+
+if [ -w "$diretorio_atual" ]; then
     mkdir target
     mkdir data
 else
