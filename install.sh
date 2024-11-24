@@ -4,6 +4,8 @@ if [ -w "./target" ]; then
     mkdir data
 else
     echo "Sem permissão para criar a pasta!!, execute como root ou altere as permissões para continuar."
+    sudo mkdir target
+    sudo mkdir data
     exit 1
 fi
 
