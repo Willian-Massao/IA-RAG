@@ -1,7 +1,14 @@
 import argparse
+import os
 from langchain_chroma import Chroma
 from langchain.prompts import ChatPromptTemplate
 from langchain_ollama import OllamaLLM
+from dotenv import load_dotenv
+
+load_dotenv()
+
+ollama_ip = os.getenv("OLLAMA_SERVER_IP", "http://localhost:11434")
+ollama_model = os.getenv("OLLAMA_MODEL", "mistral")
 
 from get_embedding_function import get_embedding_function
 

@@ -28,6 +28,23 @@ Isso irá:
 - Verificar e instalar o Python, o `pip` e o Ghostscript (caso não estejam instalados).
 - Instalar as dependências do projeto listadas no `requirements.txt`.
 
+### 1.5 Variavies de ambiente (Opcional)
+
+Preencha os dados do servidor `OLLAMA` no arquivo `.env.example` para obter a conexão com o mesmo
+
+```.env
+OLLAMA_MODEL="llama3.1:latest"
+OLLAMA_SERVER_IP="http://0.0.0.0:11434"
+```
+
+Em seguida renomeie para `.env`.
+
+Caso não faça essa etapa os valores padrôes serão
+```
+OLLAMA_MODEL="mistral"
+OLLAMA_SERVER_IP="http://localhost:11434"
+```
+
 ### 2. Regeneração de PDFs
 
 O script `regen_pdf.py` é responsável por monitorar a pasta `./target` e, ao detectar a criação de novos arquivos PDF, utiliza o Ghostscript para regenerar esses arquivos em uma versão "reparada", salvando-os na pasta `./data`.
