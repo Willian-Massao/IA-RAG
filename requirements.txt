@@ -4,3 +4,4 @@ chromadb # Vector storage
 pytest
 boto3
 watchdog
+langchain_community
