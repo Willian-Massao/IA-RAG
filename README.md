@@ -110,6 +110,7 @@ O sistema depende das seguintes bibliotecas:
 - `boto3`: SDK da AWS para interação com serviços da Amazon.
 - `watchdog`: Para monitoramento de arquivos e diretórios.
 - `langchain_community`, `langchain_ollama`, `langchain_chroma`: Bibliotecas complementares para integração com modelos de linguagem e bancos de dados vetoriais.
+- `load_dotenv`: Carregar as variavéis de ambiente para fornecer conexão com o servidor `OLLAMA`
 
 Para instalar as dependências, execute:
 
