@@ -1,6 +1,11 @@
 #!/bin/bash
-mkdir target
-mkdir data
+if [ -w "./target" ]; then
+    mkdir target
+    mkdir data
+else
+    echo "Sem permissão para criar a pasta!!, execute como root ou altere as permissões para continuar."
+    exit 1
+fi
 
 # Verificar se o Python está instalado
 if command -v python3 &>/dev/null; then
