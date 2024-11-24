@@ -40,7 +40,7 @@ OLLAMA_SERVER_IP="http://0.0.0.0:11434"
 Em seguida renomeie para `.env`.
 
 Caso não faça essa etapa os valores padrôes serão
-```
+```.env
 OLLAMA_MODEL="mistral"
 OLLAMA_SERVER_IP="http://localhost:11434"
 ```
@@ -60,6 +60,10 @@ Este script verificará se as pastas necessárias estão presentes e, se tudo es
 ### 3. Carregar Documentos para o Banco de Dados
 
 Para carregar documentos PDF para o banco de dados vetorial e permitir consultas, execute o script `populate_database.py`. O script irá carregar todos os PDFs da pasta `data`, dividir os documentos em partes menores e adicionar essas partes ao banco de dados.
+
+```bash
+python3 populate_database.py
+```
 
 Caso queira reiniciar o banco de dados, utilizando o argumento `--reset`, execute o comando:
 
