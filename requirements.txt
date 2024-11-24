@@ -5,3 +5,4 @@ pytest
 boto3
 watchdog
 langchain_community
+langchain_ollama
