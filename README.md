@@ -35,17 +35,10 @@ Antes de executar os scripts, certifique-se de ter as seguintes dependências in
 
 Para treinar a IA, você precisa fornecer um PDF que será processado e filtrado para extrair as informações necessárias.
 
-1. **Colocar o PDF no diretório `target`**:
-   Coloque o arquivo PDF que será utilizado para o treinamento no diretório `target`. O script irá ler o arquivo, filtrá-lo e preparar os dados.
-
-2. **Filtragem do PDF**:
-   Após colocar o PDF no diretório `target`, execute o script para limpar os dados extraídos do PDF:
-
-   ```bash
-   ./limpar_pdf.sh
-   ```
-
-   Este script irá limpar e filtrar os dados do PDF para que possam ser utilizados no treinamento da IA.
+1. **Supervisão do arquivo PDF pelo `regen_pdf.py`**:
+   O script `regen_pdf.py` é responsável por:
+   - **Monitorar o diretório `target`**: Sempre que um novo PDF for colocado na pasta, o script detecta automaticamente a mudança.
+   - **Verificação de corrupção**: O script utiliza o **Ghostscript (gs)** para verificar se o arquivo PDF está corrompido. Se o PDF não estiver íntegro, ele será tentara recuperado criando uma copia para o diretório `data`.
 
 ## Passo 3: Treinamento da IA
 
@@ -57,7 +50,7 @@ Após filtrar os dados, você pode treinar a IA.
    Execute o script Python da seguinte forma:
 
    ```bash
-   python populate_database.py
+   python3 populate_database.py
    ```
 
    Isso vai treinar a IA com as informações do PDF filtrado.
@@ -72,7 +65,7 @@ Após o treinamento, você pode interagir com a IA para fazer perguntas baseadas
    Exemplo de comando para interagir com a IA:
 
    ```bash
-   python query_data.py "Qual é o conteúdo sobre X?"
+   python3 query_data.py "Qual é o conteúdo sobre X?"
    ```
 
    A IA irá buscar a resposta no banco de dados treinado e retornar a resposta correspondente.
