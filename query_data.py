@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-ollama_ip = os.getenv("OLLAMA_SERVER_IP", "http://localhost:11434")
+ollama_ip = os.getenv("OLLAMA_HOST", "http://192.168.15.6:11434")
 ollama_model = os.getenv("OLLAMA_MODEL", "mistral")
 
 from get_embedding_function import get_embedding_function
@@ -47,7 +47,7 @@ def query_rag(query_text: str):
     prompt = prompt_template.format(context=context_text, question=query_text)
     # print(prompt)
 
-    model = OllamaLLM(model="mistral")
+    model = OllamaLLM(model=ollama_model, base_url=ollama_ip)
     response_text = model.invoke(prompt)
 
     sources = [doc.metadata.get("id", None) for doc, _score in results]
