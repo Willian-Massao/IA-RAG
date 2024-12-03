@@ -6,3 +6,4 @@ chroma
 .vscode
 Dockerfile
 .env
+__pycache__

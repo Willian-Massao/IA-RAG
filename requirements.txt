@@ -1,7 +1,6 @@
 pypdf
 langchain
 chromadb # Vector storage
-pytest
 watchdog
 langchain_community
 langchain_ollama
